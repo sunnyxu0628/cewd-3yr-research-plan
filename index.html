@@ -1,0 +1,1255 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CEWD Research Project Plan (2025–2029) — CTE</title>
+  <meta name="description" content="Public-facing CEWD CTE Research Project Plan (2025–2029): priorities, update cycles, deliverables, and calendar overview." />
+  <style>
+    :root {
+      --brand: rgb(49,169,224);
+      --brand-light: rgba(49,169,224,.12);
+      --brand-border: rgba(49,169,224,.25);
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text: #0f172a;
+      --muted: #64748b;
+      --border: rgba(15, 23, 42, 0.08);
+      --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+      --radius: 16px;
+
+      --prod-bg: rgba(49,169,224,.22);
+      --prod-fg: #075985;
+      --prod-border: rgba(49,169,224,.55);
+
+      --dist-bg: rgba(245,158,11,.24);
+      --dist-fg: #92400e;
+      --dist-border: rgba(245,158,11,.60);
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, sans-serif;
+      color: var(--text);
+      background-color: var(--bg);
+      line-height: 1.5;
+    }
+
+    .app { display: grid; grid-template-columns: 320px 1fr; min-height: 100vh; }
+    @media (max-width: 1100px) {
+      .app { grid-template-columns: 1fr; }
+      .sidebar { height: auto; position: static; border-right: none; border-bottom: 1px solid var(--border); }
+    }
+
+    .sidebar {
+      background: #fff;
+      border-right: 1px solid var(--border);
+      padding: 24px;
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      overflow-y: auto;
+    }
+
+    .brand-box {
+      display: flex; align-items: center; gap: 12px;
+      padding: 16px; background: var(--bg); border-radius: 12px;
+      margin-bottom: 24px; border: 1px solid var(--border);
+    }
+    .logo {
+      width: 40px; height: 40px; background: var(--brand); color: #fff;
+      display: grid; place-items: center; border-radius: 10px; font-weight: 900;
+    }
+    .brand-box h1 { font-size: 14px; margin: 0; line-height: 1.2; }
+    .brand-box span { font-size: 12px; color: var(--muted); }
+
+    .nav { display: flex; flex-direction: column; gap: 4px; }
+    .nav a {
+      padding: 12px 16px; border-radius: 10px; text-decoration: none;
+      color: var(--text); font-size: 14px; font-weight: 600; transition: 0.2s;
+    }
+    .nav a small { display: block; font-weight: 400; color: var(--muted); font-size: 11px; }
+    .nav a:hover { background: var(--brand-light); }
+    .nav a.active { background: var(--brand); color: #fff; }
+    .nav a.active small { color: rgba(255,255,255,0.8); }
+
+    .contact-card {
+      margin-top: 12px; padding: 12px; background: var(--bg);
+      border-radius: 12px; border: 1px solid var(--border); font-size: 12px;
+    }
+    .contact-card b { display: block; margin-bottom: 2px; }
+    .contact-card a { color: var(--brand); text-decoration: none; font-weight: 700; }
+
+    .main { padding: 32px; }
+    .wrap { max-width: 1100px; margin: 0 auto; }
+
+    .page-header {
+      display: flex; justify-content: space-between; align-items: flex-end;
+      margin-bottom: 18px; flex-wrap: wrap; gap: 16px;
+    }
+    .page-title { margin: 0; font-size: 32px; font-weight: 800; letter-spacing: -0.025em; }
+
+    .controls {
+      display: grid; grid-template-columns: 2fr 1fr 1fr 1fr auto; gap: 12px;
+      background: #fff; padding: 16px; border-radius: var(--radius);
+      border: 1px solid var(--border); box-shadow: var(--shadow); margin-bottom: 20px;
+    }
+    @media (max-width: 900px) { .controls { grid-template-columns: 1fr; } }
+
+    .controls input, .controls select {
+      height: 42px;
+      padding: 10px 12px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      outline: none;
+      font-size: 14px;
+      background: #fff;
+    }
+    .controls input:focus, .controls select:focus { border-color: var(--brand); }
+
+    .btn-reset {
+      height: 42px;
+      padding: 10px 16px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: #fff;
+      cursor: pointer;
+      font-weight: 800;
+    }
+    .btn-reset:hover { background: var(--bg); }
+
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(420px, 1fr)); gap: 18px; }
+    @media (max-width: 600px) { .grid { grid-template-columns: 1fr; } }
+
+    .card {
+      background: #fff; border: 1px solid var(--border); border-radius: var(--radius);
+      box-shadow: var(--shadow); display: flex; flex-direction: column; overflow: hidden;
+      transition: transform .12s ease;
+    }
+    .card:hover { transform: translateY(-1px); }
+    .card-header { padding: 16px; border-bottom: 1px solid var(--border); background: linear-gradient(to bottom right, #fff, var(--bg)); }
+    .card-title-row { display:flex; align-items:flex-start; justify-content: space-between; gap: 10px; }
+    .card-title {
+      font-size: 16px; margin: 0; font-weight: 900; color: #1e293b;
+      cursor: pointer; line-height: 1.25;
+    }
+    .card-title:hover { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 3px; }
+    .meta-row { display:flex; gap:6px; flex-wrap:wrap; margin-top: 10px; }
+    .tag-row { margin-top: 10px; display:flex; flex-wrap:wrap; gap:6px; }
+
+    .pill {
+      display: inline-block; padding: 4px 10px; border-radius: 20px; font-size: 11px;
+      font-weight: 800; letter-spacing: 0.02em; border: 1px solid transparent;
+    }
+    .pill.cadence { background: var(--brand-light); color: var(--brand); border-color: var(--brand-border); }
+    .pill.compliance { background: #fff7ed; color: #9a3412; border-color: #ffedd5; }
+    .pill.improvement { background: #f0fdf4; color: #166534; border-color: #dcfce7; }
+    .pill.tag { background: #f1f5f9; color: #475569; border-color: #e2e8f0; font-weight: 700; text-transform: none; }
+
+    .card-body { padding: 16px; font-size: 13.5px; flex-grow: 1; }
+    .card-body p { margin: 6px 0 0 0; color: #334155; }
+    .mini-label {
+      font-size: 11px; font-weight: 900; color: var(--muted);
+      text-transform: uppercase; letter-spacing: 0.06em; display: inline-block;
+    }
+    .mini-section { margin-top: 12px; }
+    .inline-list { margin: 6px 0 0 0; padding-left: 18px; }
+    .inline-list li { margin-bottom: 4px; }
+
+    .card-actions {
+      padding: 12px 16px; border-top: 1px solid var(--border);
+      display:flex; align-items:center; justify-content: space-between; gap: 12px;
+      background: var(--bg);
+    }
+    .btn {
+      height: 40px;
+      border: 1px solid var(--border);
+      background: #fff;
+      padding: 8px 12px;
+      border-radius: 12px;
+      cursor: pointer;
+      font-weight: 900;
+      font-size: 13px;
+    }
+    .btn:hover { border-color: rgba(15,23,42,0.16); background: #fff; }
+    .btn.primary { background: var(--brand); color: #fff; border-color: var(--brand); }
+    .btn.primary:hover { filter: brightness(0.97); }
+
+    .panel { background: #fff; border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); margin-bottom: 32px; overflow: hidden; }
+    .panel-header { padding: 24px; border-bottom: 1px solid var(--border); }
+    .panel-header h2 { margin: 0; font-size: 20px; font-weight: 900; }
+    .panel-header p { margin: 8px 0 0 0; color: var(--muted); font-size: 14px; }
+    .panel-body { padding: 24px; }
+    .section-label { font-size: 11px; font-weight: 900; color: var(--muted); text-transform: uppercase; margin-bottom: 8px; display: block; }
+
+    .tab-row { display: flex; gap: 8px; margin-top: 16px; flex-wrap: wrap; }
+    .tab-btn { padding: 8px 16px; border-radius: 12px; border: 1px solid var(--border); background: #fff; cursor: pointer; font-weight: 900; font-size: 13px; }
+    .tab-btn.active { background: var(--brand); color: #fff; border-color: var(--brand); }
+
+    .chip {
+      display:inline-flex; align-items:center; gap:6px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(15,23,42,0.10);
+      background: #fff;
+      color: #0f172a;
+      font-weight: 900;
+      font-size: 12px;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    .chip:hover { border-color: rgba(15,23,42,0.18); background: var(--bg); }
+    .chip.empty { cursor: default; opacity: 0.75; font-style: italic; font-weight: 700; }
+
+    .calendar-scroll {
+      overflow-x: auto;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: #fff;
+    }
+    .calendar-shell { min-width: 760px; }
+    .calendar-row {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 14px;
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--border);
+      align-items: start;
+    }
+    .calendar-row:last-child { border-bottom: none; }
+    .calendar-month { font-weight: 900; color: var(--brand); }
+    .calendar-items { display:flex; flex-wrap:wrap; gap: 8px; }
+
+    /* Schedule */
+    .schedule-head-row{
+      display:flex; align-items:flex-start; justify-content: space-between;
+      gap: 12px; flex-wrap: wrap; margin-top: 14px;
+    }
+    .schedule-toolbar {
+      margin-top: 14px;
+      display:flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: center;
+      padding: 14px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: linear-gradient(to bottom right, #fff, var(--bg));
+    }
+    .schedule-toolbar .field{
+      display:flex;
+      flex-direction: column;
+      gap: 6px;
+      min-width: 220px;
+    }
+    .schedule-toolbar label{
+      font-size: 12px;
+      font-weight: 950;
+      color: var(--muted);
+    }
+    .schedule-toolbar input, .schedule-toolbar select{
+      height: 42px;
+      padding: 10px 12px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      font-size: 14px;
+      outline: none;
+      background: #fff;
+      font-weight: 800;
+    }
+    .schedule-toolbar input:focus, .schedule-toolbar select:focus { border-color: var(--brand); }
+
+    .hint { font-size: 12px; color: var(--muted); font-weight: 700; }
+
+    .schedule-legend { display:flex; gap: 12px; flex-wrap:wrap; margin: 0; }
+    .schedule-key { display:flex; align-items:center; gap: 8px; font-size: 12px; font-weight: 900; color: #334155; }
+    .schedule-swatch { width: 14px; height: 14px; border-radius: 4px; border: 1px solid rgba(15,23,42,0.18); }
+
+    .schedule-pill{
+      display:inline-block;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 950;
+      border: 1px solid rgba(15,23,42,0.10);
+      background:#fff;
+      color:#0f172a;
+    }
+    .schedule-pill.brand{
+      border-color: var(--brand-border);
+      background: var(--brand-light);
+      color: var(--brand);
+    }
+
+    .schedule-scroll { overflow-x:auto; border: 1px solid var(--border); border-radius: 14px; background: #fff; }
+    .schedule-table { border-collapse: separate; border-spacing: 0; width: 100%; min-width: 1020px; }
+    .schedule-table th, .schedule-table td { padding: 10px 10px; border-bottom: 1px solid var(--border); font-size: 12px; }
+    .schedule-table th { text-align:left; position: sticky; top: 0; background:#fff; z-index: 2; font-weight: 950; }
+    .schedule-sticky { position: sticky; left: 0; background:#fff; z-index: 3; }
+    .schedule-cell { width: 56px; text-align:center; border-left: 1px solid var(--border); font-weight: 950; }
+
+    .schedule-prod {
+      background: var(--prod-bg);
+      color: var(--prod-fg);
+      outline: 1px solid var(--prod-border);
+      outline-offset: -1px;
+      border-radius: 6px;
+    }
+    .schedule-dist {
+      background:
+        repeating-linear-gradient(
+          45deg,
+          var(--dist-bg),
+          var(--dist-bg) 6px,
+          rgba(245,158,11,.10) 6px,
+          rgba(245,158,11,.10) 12px
+        );
+      color: var(--dist-fg);
+      outline: 1px solid var(--dist-border);
+      outline-offset: -1px;
+      border-radius: 6px;
+    }
+    .schedule-both {
+      background: linear-gradient(135deg, var(--prod-bg), rgba(245,158,11,.20));
+      color: #0f172a;
+      outline: 2px solid rgba(15,23,42,0.22);
+      outline-offset: -2px;
+      border-radius: 6px;
+    }
+    .schedule-proj-meta { margin-top: 4px; font-size: 11px; font-weight: 850; color: var(--muted); }
+
+    /* Modal */
+    .modal-backdrop {
+      position: fixed; inset: 0;
+      background: rgba(15,23,42,0.55);
+      display:none;
+      align-items: center;
+      justify-content: center;
+      padding: 18px;
+      z-index: 9999;
+    }
+    .modal-backdrop.open { display:flex; }
+    .modal {
+      width: min(980px, 96vw);
+      max-height: 90vh;
+      overflow: auto;
+      background: #fff;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,0.2);
+      box-shadow: 0 30px 80px rgba(0,0,0,0.25);
+    }
+    .modal-head {
+      padding: 18px 20px;
+      border-bottom: 1px solid var(--border);
+      display:flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 14px;
+      background: linear-gradient(to bottom right, #fff, var(--bg));
+    }
+    .modal-title { margin:0; font-size: 18px; font-weight: 950; color:#0f172a; }
+    .modal-sub { margin-top: 8px; display:flex; gap:6px; flex-wrap:wrap; }
+    .modal-body { padding: 18px 20px; }
+    .modal-close {
+      border: 1px solid rgba(15,23,42,0.12);
+      background: #fff;
+      padding: 8px 12px;
+      border-radius: 12px;
+      cursor: pointer;
+      font-weight: 900;
+      font-size: 13px;
+      white-space: nowrap;
+      height: 40px;
+    }
+    .modal-close:hover { background: var(--bg); }
+
+    .kv { display: grid; grid-template-columns: 160px 1fr; gap: 12px; margin: 0; }
+    @media (max-width: 720px){ .kv { grid-template-columns: 1fr; } }
+    .kv dt {
+      font-weight: 900; color: var(--muted); font-size: 11px;
+      text-transform: uppercase; letter-spacing: 0.06em;
+      margin-top: 10px;
+    }
+    .kv dd { margin: 0; color: #334155; }
+    .kv dd p { margin: 0; }
+
+    ul { margin: 0; padding-left: 20px; }
+    li { margin-bottom: 4px; }
+    .empty { color: var(--muted); font-style: italic; }
+
+    .email-link { color: var(--brand); text-decoration: none; font-weight: 900; }
+    .email-link:hover { text-decoration: underline; }
+    .doc-link { color: var(--brand); font-weight: 900; text-decoration: none; }
+    .doc-link:hover { text-decoration: underline; }
+
+    /* Load banner */
+    .load-banner{
+      display:none;
+      margin-bottom: 16px;
+      padding: 12px 14px;
+      border-radius: 14px;
+      border: 1px solid rgba(220,38,38,0.18);
+      background: rgba(220,38,38,0.06);
+      color: #7f1d1d;
+      font-weight: 900;
+    }
+  </style>
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="brand-box">
+      <div class="logo">CTE</div>
+      <div>
+        <h1>CEWD Research Project Plan</h1>
+        <span>2025–2029 (Draft)</span>
+      </div>
+    </div>
+
+    <nav class="nav">
+      <a href="#overview" class="active" data-route="overview">Overview <small>Purpose & Guidelines</small></a>
+      <a href="#projects" data-route="projects">Projects <small>Database & Search</small></a>
+      <a href="#schedule" data-route="schedule">Schedule <small>Production & Release</small></a>
+      <a href="#calendar" data-route="calendar">Calendar <small>Aligned to Schedule</small></a>
+      <a href="#practices" data-route="practices">Practices <small>Standard Standards</small></a>
+    </nav>
+
+    <div style="margin-top: 32px;">
+      <span class="section-label">Contact</span>
+      <div class="contact-card">
+        <b>Amertah E. Perman</b>
+        Dean, CEWD<br>
+        <a href="mailto:aperman@sdccd.edu">aperman@sdccd.edu</a>
+      </div>
+      <div class="contact-card">
+        <b>Sunny Xu</b>
+        Workforce System Manager<br>
+        <a href="mailto:qxu@sdccd.edu">qxu@sdccd.edu</a>
+      </div>
+    </div>
+  </aside>
+
+  <main class="main">
+    <div class="wrap">
+      <div class="load-banner" id="loadBanner">
+        Data files couldn’t be loaded. If you opened this file via <b>file://</b>, please host it (e.g., GitHub Pages) so the browser can fetch <b>/data/*.json</b>.
+      </div>
+
+      <!-- Overview -->
+      <section id="overview" class="panel">
+        <div class="panel-header">
+          <h2>Project Plan Overview</h2>
+          <p>Strategic roadmap for Career Education and Workforce Development (CEWD) research, compliance, and improvement projects.</p>
+        </div>
+        <div class="panel-body">
+          <span class="section-label">Navigation Guide</span>
+          <ul style="margin-top: 12px;">
+            <li><b>Projects:</b> Browse projects at a glance, then click <b>View more</b> for full details.</li>
+            <li><b>Schedule:</b> Scan project timing (production vs distribution) across <b>Jan–Dec</b>. (Excludes Ad-hoc.)</li>
+            <li><b>Calendar Overview:</b> Generated from the same schedule (plus optional events). Items show <b>lead</b> and are clickable.</li>
+            <li><b>Maintainability:</b> Edit data in <b>/data/projects.json</b>, <b>/data/schedule.json</b>, <b>/data/events.json</b>.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Projects -->
+      <section id="projects">
+        <div class="page-header">
+          <h2 class="page-title">Projects</h2>
+          <div style="display: flex; gap: 8px; flex-wrap:wrap;">
+            <span class="pill cadence" id="pillTotal">Total: —</span>
+            <span class="pill compliance" id="pillCompliance">Compliance: —</span>
+            <span class="pill improvement" id="pillImprovement">Improvement: —</span>
+          </div>
+        </div>
+
+        <div class="controls">
+          <input id="q" type="text" placeholder="Search by name, tag, lead, or keyword...">
+          <select id="cadence">
+            <option value="">All Cadences</option>
+            <option value="Term-Updated">Term-Updated</option>
+            <option value="Annual-Updated">Annual-Updated</option>
+            <option value="Biennial">Biennial</option>
+            <option value="Ad-Hoc">Ad-Hoc</option>
+          </select>
+          <select id="category">
+            <option value="">All Categories</option>
+            <option value="Compliance">Compliance</option>
+            <option value="Improvement">Improvement</option>
+          </select>
+          <select id="lead">
+            <option value="">All Leads</option>
+          </select>
+          <button class="btn-reset" id="resetBtn">Reset</button>
+        </div>
+
+        <div class="grid" id="grid"></div>
+      </section>
+
+      <!-- Schedule -->
+      <section id="schedule" class="panel" style="margin-top: 40px;">
+        <div class="panel-header">
+          <h2>Production & Distribution Schedule (Jan–Dec)</h2>
+          <p><b>P</b> = Production, <b>D</b> = Distribution (release). Click a project to open details. (Schedule excludes Ad-hoc projects.)</p>
+
+          <div class="schedule-head-row">
+            <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+              <span class="schedule-pill brand" id="scheduleCount">Showing: —</span>
+              <span class="schedule-pill" id="scheduleYearPill">Year: 2026</span>
+            </div>
+
+            <div class="schedule-legend" aria-label="Schedule legend">
+              <div class="schedule-key">
+                <span class="schedule-swatch" style="background: var(--prod-bg); border-color: var(--prod-border);"></span>
+                Production (P)
+              </div>
+              <div class="schedule-key">
+                <span class="schedule-swatch" style="background: repeating-linear-gradient(45deg, var(--dist-bg), var(--dist-bg) 6px, rgba(245,158,11,.10) 6px, rgba(245,158,11,.10) 12px); border-color: var(--dist-border);"></span>
+                Distribution (D)
+              </div>
+              <div class="schedule-key">
+                <span class="schedule-swatch" style="background: linear-gradient(135deg, var(--prod-bg), rgba(245,158,11,.20)); border-color: rgba(15,23,42,0.22);"></span>
+                Both (P/D)
+              </div>
+            </div>
+          </div>
+
+          <!-- NEW: one-row toolbar (search + multi project filter + year mode + export) -->
+          <div class="schedule-toolbar">
+            <div class="field" style="min-width:260px; flex: 1 1 260px;">
+              <label>Search projects in schedule</label>
+              <input id="schedSearch" type="text" placeholder="Type to filter schedule…">
+            </div>
+
+            <div class="field" style="min-width:320px; flex: 2 1 320px;">
+              <label>Filter projects (multi-select)</label>
+              <select id="schedProjects" multiple aria-label="Filter projects (multi-select)" title="Tip: Cmd/Ctrl-click for multi-select">
+              </select>
+              <div class="hint">Tip: Cmd/Ctrl-click to select multiple. Clear selection to view all.</div>
+            </div>
+
+            <div class="field" style="min-width:220px;">
+              <label>Year mode</label>
+              <select id="yearModeSchedule" aria-label="Schedule year mode">
+                <option value="even" selected>Even Year (e.g., 2026)</option>
+                <option value="odd">Odd Year (e.g., 2027)</option>
+              </select>
+            </div>
+
+            <div style="display:flex; gap:10px; align-items:flex-end;">
+              <button class="btn" type="button" id="schedClear">Clear</button>
+              <button class="btn primary" type="button" id="exportScheduleCsv">Export CSV</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel-body" id="scheduleWrap"></div>
+      </section>
+
+      <!-- Calendar -->
+      <section id="calendar" class="panel" style="margin-top: 40px;">
+        <div class="panel-header">
+          <h2>Calendar Overview</h2>
+          <p>Generated from the same schedule (plus optional events). Items show lead and are clickable when they are projects.</p>
+          <div class="tab-row" id="calendarTabs"></div>
+        </div>
+        <div class="panel-body" id="calendarWrap"></div>
+      </section>
+
+      <!-- Practices (kept simple; can be moved to JSON later) -->
+      <section id="practices" class="panel">
+        <div class="panel-header">
+          <h2>Standard Practices</h2>
+          <p>Protocols to ensure consistency across all district workforce research.</p>
+        </div>
+        <div class="panel-body" id="practicesBody"></div>
+      </section>
+
+      <div style="font-size: 12px; color: var(--muted); text-align: center; padding: 40px 0;">
+        Last updated: <span id="lastUpdated"></span>
+      </div>
+    </div>
+  </main>
+</div>
+
+<!-- Modal -->
+<div class="modal-backdrop" id="modalBackdrop" aria-hidden="true">
+  <div class="modal" role="dialog" aria-modal="true" aria-label="Project details">
+    <div class="modal-head">
+      <div>
+        <h3 class="modal-title" id="modalTitle">—</h3>
+        <div class="modal-sub" id="modalPills"></div>
+      </div>
+      <button class="modal-close" type="button" id="modalCloseBtn">Close</button>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+  </div>
+</div>
+
+<script>
+/**
+ * Data is loaded from JSON files for maintainability:
+ *  - /data/projects.json
+ *  - /data/schedule.json
+ *  - /data/events.json
+ *
+ * Recommended workflow:
+ *  1) Edit JSON files (most teammates can do this safely).
+ *  2) Commit changes → GitHub Pages updates the website.
+ */
+
+let PROJECTS = [];
+let SCHEDULE = {};
+let CALENDAR_EVENTS = {};
+
+const MONTHS = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+// -----------------------
+// Utils
+// -----------------------
+function linkify(text) {
+  if (!text) return text;
+  const emailRegex = /([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9._-]+)/gi;
+  return text.replace(emailRegex, '<a href="mailto:$1" class="email-link">$1</a>');
+}
+function escapeHtml(str){
+  return (str ?? "").toString()
+    .replaceAll("&","&amp;")
+    .replaceAll("<","&lt;")
+    .replaceAll(">","&gt;")
+    .replaceAll('"',"&quot;")
+    .replaceAll("'","&#039;");
+}
+function asList(arr){
+  if(!arr || arr.length === 0) return `<span class="empty">TBD</span>`;
+  return `<ul>${arr.map(x => `<li>${linkify(escapeHtml(x))}</li>`).join("")}</ul>`;
+}
+function asInlineList(arr){
+  if(!arr || arr.length === 0) return `<span class="empty">TBD</span>`;
+  return `<ul class="inline-list">${arr.map(x => `<li>${escapeHtml(x)}</li>`).join("")}</ul>`;
+}
+function slugify(str){
+  return (str ?? "")
+    .toString()
+    .trim()
+    .toLowerCase()
+    .replace(/['"]/g,"")
+    .replace(/[^a-z0-9]+/g,"-")
+    .replace(/(^-|-$)/g,"");
+}
+function docLinkOrPlaceholder(doc){
+  const v = (doc ?? "").toString().trim();
+  if(!v || v.toLowerCase() === "to be added" || v.toLowerCase() === "tbd" ) return `<span class="empty">To be added</span>`;
+  if(v.toLowerCase() === "n/a") return `<span class="empty">N/A</span>`;
+  if(/^https?:\/\//i.test(v)) return `<a class="doc-link" href="${escapeHtml(v)}" target="_blank" rel="noopener noreferrer">Open documentation</a>`;
+  return `<a class="doc-link" href="${escapeHtml(v)}" target="_blank" rel="noopener noreferrer">Open documentation</a>`;
+}
+function modeForYear(year) { return (Number(year) % 2 === 0) ? "even" : "odd"; }
+function getLeadBadge(projectLeadStr) {
+  const s = (projectLeadStr || "").toLowerCase();
+  if (s.includes("sunny")) return "Sunny";
+  if (s.includes("ben")) return "Ben";
+  const namePart = (projectLeadStr || "TBD").split(",")[0].trim();
+  const first = namePart.split(/\s+/)[0] || "TBD";
+  return first;
+}
+
+// -----------------------
+// Schedule helpers
+// -----------------------
+function scheduleClass(isProd, isDist){
+  if (isProd && isDist) return "schedule-both";
+  if (isProd) return "schedule-prod";
+  if (isDist) return "schedule-dist";
+  return "";
+}
+function scheduleLabel(isProd, isDist){
+  if (isProd && isDist) return "P/D";
+  if (isProd) return "P";
+  if (isDist) return "D";
+  return "";
+}
+function getScheduleForProject(projectName, mode){
+  const s = SCHEDULE?.[projectName]?.[mode];
+  if (!s) return { prod: new Set(), dist: new Set(), hasData: false };
+  return {
+    prod: new Set((s.prod || []).map(x => String(x).trim())),
+    dist: new Set((s.dist || []).map(x => String(x).trim())),
+    hasData: true
+  };
+}
+function inferProductionMonthsFromUpdateCycle(updateCycle){
+  const aliases = new Map([
+    ["january","Jan"], ["jan","Jan"],
+    ["february","Feb"], ["feb","Feb"],
+    ["march","Mar"], ["mar","Mar"],
+    ["april","Apr"], ["apr","Apr"],
+    ["may","May"],
+    ["june","Jun"], ["jun","Jun"],
+    ["july","Jul"], ["jul","Jul"],
+    ["august","Aug"], ["aug","Aug"],
+    ["september","Sep"], ["sep","Sep"], ["sept","Sep"],
+    ["october","Oct"], ["oct","Oct"],
+    ["november","Nov"], ["nov","Nov"],
+    ["december","Dec"], ["dec","Dec"],
+  ]);
+  const out = new Set();
+  const arr = Array.isArray(updateCycle) ? updateCycle : (updateCycle ? [String(updateCycle)] : []);
+  const text = arr.join(" | ").toLowerCase();
+  for (const [k, v] of aliases.entries()){
+    if (text.includes(k)) out.add(v);
+  }
+  return [...out];
+}
+
+// -----------------------
+// DOM refs
+// -----------------------
+const qEl = document.getElementById("q");
+const cadenceEl = document.getElementById("cadence");
+const categoryEl = document.getElementById("category");
+const leadEl = document.getElementById("lead");
+const grid = document.getElementById("grid");
+
+const yearModeScheduleEl = document.getElementById("yearModeSchedule");
+const scheduleCountEl = document.getElementById("scheduleCount");
+const scheduleYearPillEl = document.getElementById("scheduleYearPill");
+const scheduleWrap = document.getElementById("scheduleWrap");
+
+const schedSearchEl = document.getElementById("schedSearch");
+const schedProjectsEl = document.getElementById("schedProjects");
+const schedClearBtn = document.getElementById("schedClear");
+const exportScheduleBtn = document.getElementById("exportScheduleCsv");
+
+const modalBackdrop = document.getElementById("modalBackdrop");
+const modalTitle = document.getElementById("modalTitle");
+const modalPills = document.getElementById("modalPills");
+const modalBody = document.getElementById("modalBody");
+const modalCloseBtn = document.getElementById("modalCloseBtn");
+
+let PROJECT_INDEX = new Map();
+
+// -----------------------
+// Modal
+// -----------------------
+function openProjectBySlug(slug){
+  const p = PROJECT_INDEX.get(slug);
+  if(!p) return;
+
+  const catClass = (p.projectCategory || "").toLowerCase();
+  modalTitle.textContent = p.name || "Project";
+
+  modalPills.innerHTML = `
+    <span class="pill cadence">${escapeHtml(p.cadence || "")}</span>
+    <span class="pill ${catClass}">${escapeHtml(p.projectCategory || "")}</span>
+    ${(p.tags || []).map(t => `<span class="pill tag">${escapeHtml(t)}</span>`).join("")}
+  `;
+
+  modalBody.innerHTML = `
+    <dl class="kv">
+      <dt>Goal</dt><dd><p>${escapeHtml(p.goal || "")}</p></dd>
+      <dt>Deliverables</dt><dd>${asList(p.deliverables)}</dd>
+
+      <dt>Project Lead</dt><dd>${linkify(escapeHtml(p.projectLead || "TBD"))}</dd>
+      <dt>Validator</dt><dd>${linkify(escapeHtml(p.validator || "TBD"))}</dd>
+      <dt>Update Cycle</dt><dd>${asList(p.updateCycle)}</dd>
+
+      <dt>Data Sources</dt><dd>${asList(p.dataSources)}</dd>
+      <dt>Collaborators</dt><dd>${asList(p.collaborators)}</dd>
+      <dt>Committee Connections</dt><dd>${asList(p.committeeConnections)}</dd>
+      <dt>Distribution</dt><dd>${asList(p.distribution)}</dd>
+
+      ${p.highlights?.length ? `<dt>Highlights</dt><dd>${asList(p.highlights)}</dd>` : ``}
+      ${p.notes?.length ? `<dt>Notes</dt><dd>${asList(p.notes)}</dd>` : ``}
+
+      <dt>Documentation</dt><dd>${docLinkOrPlaceholder(p.documentation)}</dd>
+    </dl>
+  `;
+
+  modalBackdrop.classList.add("open");
+  modalBackdrop.setAttribute("aria-hidden","false");
+  document.body.style.overflow = "hidden";
+}
+function closeModal(){
+  modalBackdrop.classList.remove("open");
+  modalBackdrop.setAttribute("aria-hidden","true");
+  document.body.style.overflow = "";
+}
+modalCloseBtn.addEventListener("click", closeModal);
+modalBackdrop.addEventListener("click", (e) => { if(e.target === modalBackdrop) closeModal(); });
+window.addEventListener("keydown", (e) => { if(e.key === "Escape" && modalBackdrop.classList.contains("open")) closeModal(); });
+
+function bindOpenHandlers(scopeEl){
+  scopeEl.querySelectorAll("[data-open]").forEach(el => {
+    el.addEventListener("click", (e) => {
+      const slug = e.currentTarget.getAttribute("data-open");
+      openProjectBySlug(slug);
+    });
+  });
+}
+
+// -----------------------
+// Renderers
+// -----------------------
+function renderProjects(filtered){
+  document.getElementById("pillTotal").textContent = `Total: ${filtered.length}`;
+  document.getElementById("pillCompliance").textContent = `Compliance: ${filtered.filter(x=>x.projectCategory==="Compliance").length}`;
+  document.getElementById("pillImprovement").textContent = `Improvement: ${filtered.filter(x=>x.projectCategory==="Improvement").length}`;
+
+  grid.innerHTML = filtered.map(p => {
+    const slug = slugify(p.name);
+    const catClass = (p.projectCategory || "").toLowerCase();
+    return `
+      <article class="card" data-slug="${slug}">
+        <div class="card-header">
+          <div class="card-title-row">
+            <h3 class="card-title" data-open="${slug}" title="Click to view more">
+              ${escapeHtml(p.name)}
+            </h3>
+          </div>
+
+          <div class="meta-row">
+            <span class="pill cadence">${escapeHtml(p.cadence || "")}</span>
+            <span class="pill ${catClass}">${escapeHtml(p.projectCategory || "")}</span>
+          </div>
+
+          <div class="tag-row">
+            ${(p.tags || []).map(t => `<span class="pill tag">${escapeHtml(t)}</span>`).join("")}
+          </div>
+        </div>
+
+        <div class="card-body">
+          <span class="mini-label">Goal</span>
+          <p>${escapeHtml(p.goal || "")}</p>
+
+          <div class="mini-section">
+            <span class="mini-label">Deliverables</span>
+            ${asInlineList(p.deliverables)}
+          </div>
+        </div>
+
+        <div class="card-actions">
+          <span class="muted" style="font-size:12px; font-weight:800;">Opens full project details</span>
+          <button class="btn primary" type="button" data-open="${slug}">View more</button>
+        </div>
+      </article>
+    `;
+  }).join("");
+
+  bindOpenHandlers(grid);
+}
+
+function getSelectedScheduleProjectNames(){
+  // If nothing selected -> treat as "All"
+  const selected = [...schedProjectsEl.options].filter(o => o.selected).map(o => o.value);
+  return selected;
+}
+
+function applyScheduleFilters(projectsForSchedule){
+  const q = (schedSearchEl.value || "").trim().toLowerCase();
+  const selectedNames = getSelectedScheduleProjectNames();
+
+  return projectsForSchedule.filter(p => {
+    const matchesSearch = !q || (p.name || "").toLowerCase().includes(q) || (p.projectLead || "").toLowerCase().includes(q) || (p.projectCategory || "").toLowerCase().includes(q);
+    const matchesSelected = (selectedNames.length === 0) || selectedNames.includes(p.name);
+    return matchesSearch && matchesSelected;
+  });
+}
+
+function renderSchedule(baseProjects){
+  const mode = yearModeScheduleEl?.value || "even";
+  scheduleYearPillEl.textContent = `Year: ${mode === "odd" ? "2027" : "2026"}`;
+
+  const filtered = applyScheduleFilters(baseProjects);
+  scheduleCountEl.textContent = `Showing: ${filtered.length}`;
+
+  const rows = filtered.map(p => {
+    const { prod, dist, hasData } = getScheduleForProject(p.name, mode);
+
+    let prodSet = prod;
+    let distSet = dist;
+
+    // fallback if schedule missing
+    if(!hasData){
+      const inferred = inferProductionMonthsFromUpdateCycle(p.updateCycle);
+      prodSet = new Set(inferred);
+      distSet = new Set();
+    }
+
+    const slug = slugify(p.name);
+    const cells = MONTHS.map(m => {
+      const isProd = prodSet.has(m);
+      const isDist = distSet.has(m);
+      const cls = scheduleClass(isProd, isDist);
+      const label = scheduleLabel(isProd, isDist);
+      return `<td class="schedule-cell ${cls}">${label}</td>`;
+    }).join("");
+
+    return `
+      <tr>
+        <td class="schedule-sticky">
+          <button class="chip" type="button" data-open="${slug}" title="View more">${escapeHtml(p.name)}</button>
+          <div class="schedule-proj-meta">${escapeHtml(p.cadence || "")} • ${escapeHtml(p.projectCategory || "")}</div>
+        </td>
+        ${cells}
+      </tr>
+    `;
+  }).join("");
+
+  scheduleWrap.innerHTML = `
+    <div class="schedule-scroll">
+      <table class="schedule-table" aria-label="Production and distribution schedule table">
+        <thead>
+          <tr>
+            <th class="schedule-sticky">Project</th>
+            ${MONTHS.map(m => `<th class="schedule-cell">${m}</th>`).join("")}
+          </tr>
+        </thead>
+        <tbody>
+          ${rows || `<tr><td class="schedule-sticky empty">No projects match current schedule filters.</td>${MONTHS.map(()=>`<td class="schedule-cell"></td>`).join("")}</tr>`}
+        </tbody>
+      </table>
+    </div>
+  `;
+
+  bindOpenHandlers(scheduleWrap);
+}
+
+function exportScheduleCSV(baseProjects){
+  const mode = yearModeScheduleEl?.value || "even";
+  const filtered = applyScheduleFilters(baseProjects);
+
+  const header = ["Project", "Lead", "Category", ...MONTHS];
+  const lines = [header];
+
+  filtered.forEach(p => {
+    const { prod, dist, hasData } = getScheduleForProject(p.name, mode);
+    let prodSet = prod, distSet = dist;
+    if(!hasData){
+      const inferred = inferProductionMonthsFromUpdateCycle(p.updateCycle);
+      prodSet = new Set(inferred);
+      distSet = new Set();
+    }
+
+    const row = [
+      p.name || "",
+      getLeadBadge(p.projectLead),
+      p.projectCategory || "",
+      ...MONTHS.map(m => scheduleLabel(prodSet.has(m), distSet.has(m)))
+    ];
+    // CSV escaping
+    lines.push(row.map(v => {
+      const s = String(v ?? "");
+      if (s.includes('"') || s.includes(",") || s.includes("\n")) return `"${s.replaceAll('"','""')}"`;
+      return s;
+    }));
+  });
+
+  const csv = lines.map(r => r.join(",")).join("\n");
+  const blob = new Blob([csv], { type: "text/csv;charset=utf-8" });
+  const url = URL.createObjectURL(blob);
+
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = `CEWD_Schedule_${mode === "odd" ? "2027" : "2026"}.csv`;
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  URL.revokeObjectURL(url);
+}
+
+// Calendar (schedule-derived + events + optional adhoc hints)
+function buildCalendarUnified(year, options = { includeAdHoc: true, includeProd: true, includeDist: true }) {
+  const mode = modeForYear(year);
+  const buckets = {};
+  MONTHS.forEach(m => { buckets[m] = { projects: [], events: [] }; });
+
+  const includeProd = options.includeProd !== false;
+  const includeDist = options.includeDist !== false;
+  const includeAdHoc = options.includeAdHoc !== false;
+
+  // Scheduled projects (exclude Ad-hoc)
+  const scheduledCandidates = PROJECTS.filter(p => p.cadence !== "Ad-Hoc");
+  scheduledCandidates.forEach(p => {
+    const sched = getScheduleForProject(p.name, mode);
+    if (!sched || (!sched.hasData && (!p.updateCycle || p.updateCycle.length === 0))) return;
+
+    let prodSet = sched.prod;
+    let distSet = sched.dist;
+    if (!sched.hasData) {
+      const inferred = inferProductionMonthsFromUpdateCycle(p.updateCycle);
+      prodSet = new Set(inferred);
+      distSet = new Set();
+    }
+
+    MONTHS.forEach(m => {
+      const isProd = includeProd && prodSet.has(m);
+      const isDist = includeDist && distSet.has(m);
+      if (!isProd && !isDist) return;
+
+      buckets[m].projects.push({
+        name: p.name,
+        slug: slugify(p.name),
+        lead: getLeadBadge(p.projectLead),
+        pd: scheduleLabel(isProd, isDist)
+      });
+    });
+  });
+
+  // Ad-hoc via calendarHints (optional)
+  if (includeAdHoc){
+    PROJECTS.filter(p => p.cadence === "Ad-Hoc" && p.calendarHints).forEach(p => {
+      let months = [];
+      if (Array.isArray(p.calendarHints)) months = p.calendarHints;
+      else if (typeof p.calendarHints === "object" && p.calendarHints) months = p.calendarHints[String(year)] || [];
+
+      months.map(x => String(x).trim()).forEach(m => {
+        if (!MONTHS.includes(m)) return;
+        buckets[m].projects.push({
+          name: p.name,
+          slug: slugify(p.name),
+          lead: getLeadBadge(p.projectLead),
+          pd: "Ad-hoc"
+        });
+      });
+    });
+  }
+
+  // Events
+  const evYear = CALENDAR_EVENTS[String(year)] || {};
+  Object.entries(evYear).forEach(([m, arr]) => {
+    if (!MONTHS.includes(m)) return;
+    (arr || []).forEach(txt => buckets[m].events.push(String(txt)));
+  });
+
+  const rank = (pd) => (pd === "D" ? 0 : pd === "P/D" ? 1 : pd === "P" ? 2 : 3);
+  MONTHS.forEach(m => {
+    buckets[m].projects.sort((a,b) => {
+      const r = rank(a.pd) - rank(b.pd);
+      if (r !== 0) return r;
+      return a.name.localeCompare(b.name);
+    });
+  });
+
+  return buckets;
+}
+
+function renderCalendar(year) {
+  const buckets = buildCalendarUnified(year, { includeAdHoc: true, includeProd: true, includeDist: true });
+  const wrap = document.getElementById("calendarWrap");
+
+  const rows = MONTHS.map(m => {
+    const title = `${m} ${year}`;
+    const proj = buckets[m].projects || [];
+    const evs  = buckets[m].events || [];
+
+    const projectChips = proj.length
+      ? proj.map(it => {
+          const label = `${it.name} — ${it.lead} (${it.pd})`;
+          return `<button class="chip" type="button" data-open="${it.slug}" title="View more">${escapeHtml(label)}</button>`;
+        }).join("")
+      : "";
+
+    const eventChips = evs.length
+      ? evs.map(e => `<span class="chip" title="Event">${escapeHtml(e)}</span>`).join("")
+      : "";
+
+    const content = (projectChips || eventChips)
+      ? `${projectChips}${eventChips}`
+      : `<span class="chip empty">No updates</span>`;
+
+    return `
+      <div class="calendar-row">
+        <div class="calendar-month">${escapeHtml(title)}</div>
+        <div class="calendar-items">${content}</div>
+      </div>
+    `;
+  }).join("");
+
+  wrap.innerHTML = `
+    <div class="calendar-scroll">
+      <div class="calendar-shell">
+        ${rows}
+      </div>
+    </div>
+  `;
+
+  bindOpenHandlers(wrap);
+}
+
+// -----------------------
+// Main render
+// -----------------------
+function getFilteredProjects(){
+  const query = qEl.value.toLowerCase();
+  return PROJECTS.filter(p => {
+    const hay = JSON.stringify(p).toLowerCase();
+    return hay.includes(query) &&
+      (!cadenceEl.value || p.cadence === cadenceEl.value) &&
+      (!categoryEl.value || p.projectCategory === categoryEl.value) &&
+      (!leadEl.value || p.projectLead === leadEl.value);
+  });
+}
+
+function renderAll(){
+  const filtered = getFilteredProjects();
+  renderProjects(filtered);
+
+  // Schedule uses non ad-hoc projects only (per your rule)
+  const scheduleBase = PROJECTS.filter(p => p.cadence !== "Ad-Hoc");
+  renderSchedule(scheduleBase);
+
+  // Calendar uses selected tab year
+  const activeBtn = document.querySelector(".tab-btn.active");
+  const year = activeBtn ? activeBtn.dataset.year : "2026";
+  renderCalendar(year);
+}
+
+function populateLeads(){
+  leadEl.innerHTML = `<option value="">All Leads</option>`;
+  const leads = [...new Set(PROJECTS.map(p => p.projectLead).filter(Boolean))].sort();
+  leads.forEach(l => {
+    const opt = document.createElement("option");
+    opt.value = l; opt.textContent = l;
+    leadEl.appendChild(opt);
+  });
+}
+
+function populateScheduleProjectMultiSelect(){
+  // only non ad-hoc for schedule
+  const scheduleProjects = PROJECTS.filter(p => p.cadence !== "Ad-Hoc").map(p => p.name).sort();
+  schedProjectsEl.innerHTML = "";
+  scheduleProjects.forEach(name => {
+    const opt = document.createElement("option");
+    opt.value = name;
+    opt.textContent = name;
+    schedProjectsEl.appendChild(opt);
+  });
+}
+
+function buildCalendarTabs(){
+  // make tabs from years seen in events or just default set
+  const years = new Set(["2025","2026","2027"]);
+  Object.keys(CALENDAR_EVENTS || {}).forEach(y => years.add(String(y)));
+  // also include years implied by schedule: just include 2026 and 2027 at minimum
+  years.add("2026"); years.add("2027");
+
+  const ordered = [...years].sort();
+  const tabWrap = document.getElementById("calendarTabs");
+  tabWrap.innerHTML = ordered.map((y, idx) => {
+    const active = (y === "2026") ? "active" : "";
+    return `<button class="tab-btn ${active}" data-year="${escapeHtml(y)}">${escapeHtml(y)}</button>`;
+  }).join("");
+
+  tabWrap.querySelectorAll(".tab-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      tabWrap.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      renderCalendar(btn.dataset.year);
+    });
+  });
+}
+
+function wireEvents(){
+  [qEl, cadenceEl, categoryEl, leadEl].forEach(el => el.addEventListener("input", renderAll));
+  yearModeScheduleEl.addEventListener("change", () => {
+    // schedule + calendar are year-sensitive
+    const scheduleBase = PROJECTS.filter(p => p.cadence !== "Ad-Hoc");
+    renderSchedule(scheduleBase);
+    const activeBtn = document.querySelector(".tab-btn.active");
+    renderCalendar(activeBtn ? activeBtn.dataset.year : "2026");
+  });
+
+  schedSearchEl.addEventListener("input", () => {
+    const scheduleBase = PROJECTS.filter(p => p.cadence !== "Ad-Hoc");
+    renderSchedule(scheduleBase);
+  });
+  schedProjectsEl.addEventListener("change", () => {
+    const scheduleBase = PROJECTS.filter(p => p.cadence !== "Ad-Hoc");
+    renderSchedule(scheduleBase);
+  });
+
+  schedClearBtn.addEventListener("click", () => {
+    schedSearchEl.value = "";
+    [...schedProjectsEl.options].forEach(o => o.selected = false);
+    const scheduleBase = PROJECTS.filter(p => p.cadence !== "Ad-Hoc");
+    renderSchedule(scheduleBase);
+  });
+
+  exportScheduleBtn.addEventListener("click", () => {
+    const scheduleBase = PROJECTS.filter(p => p.cadence !== "Ad-Hoc");
+    exportScheduleCSV(scheduleBase);
+  });
+
+  document.getElementById("resetBtn").addEventListener("click", () => {
+    qEl.value = "";
+    cadenceEl.value = "";
+    categoryEl.value = "";
+    leadEl.value = "";
+    renderAll();
+  });
+
+  // nav active state
+  window.addEventListener("hashchange", () => {
+    const h = location.hash || "#overview";
+    document.querySelectorAll(".nav a").forEach(a => a.classList.toggle("active", a.getAttribute("href") === h));
+  });
+}
+
+// -----------------------
+// Load JSON data
+// -----------------------
+async function loadJson(path){
+  const res = await fetch(path, { cache: "no-store" });
+  if(!res.ok) throw new Error(`Failed to load ${path}: ${res.status}`);
+  return res.json();
+}
+
+async function init(){
+  try{
+    const [proj, sched, ev] = await Promise.all([
+      loadJson("./data/projects.json"),
+      loadJson("./data/schedule.json"),
+      loadJson("./data/events.json"),
+    ]);
+
+    PROJECTS = Array.isArray(proj) ? proj : [];
+    SCHEDULE = sched || {};
+    CALENDAR_EVENTS = ev || {};
+
+    PROJECT_INDEX = new Map(PROJECTS.map(p => [slugify(p.name), p]));
+
+    populateLeads();
+    populateScheduleProjectMultiSelect();
+    buildCalendarTabs();
+
+    // Practices (kept inline; can be moved to JSON later)
+    const PRACTICES = [
+      { title: "Dashboard Development", items: ["Documentation Template","Data Validation Guidelines"] },
+      { title: "External Data Reporting", items: ["Documentation Template","Data Validation Guidelines"] },
+      { title: "Internal Data Reports", items: ["Documentation Template","Data Validation Guidelines"] },
+      { title: "Distribution Guidelines", items: ["Distribution Guidelines"] }
+    ];
+    document.getElementById("practicesBody").innerHTML = PRACTICES.map(s => `
+      <div style="margin-bottom:20px">
+        <span class="section-label" style="color:var(--brand)">${escapeHtml(s.title)}</span>
+        ${asList(s.items)}
+      </div>
+    `).join("");
+
+    wireEvents();
+    renderAll();
+    document.getElementById("lastUpdated").textContent = new Date().toLocaleDateString();
+  } catch (err){
+    console.error(err);
+    document.getElementById("loadBanner").style.display = "block";
+    // still render practices and header so the page isn't blank
+    document.getElementById("lastUpdated").textContent = new Date().toLocaleDateString();
+  }
+}
+
+init();
+</script>
+</body>
+</html>

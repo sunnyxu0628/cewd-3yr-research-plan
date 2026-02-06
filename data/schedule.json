@@ -1,0 +1,320 @@
+{
+  "Work-Based Learning (WBL) Dashboard": {
+    "even": {
+      "prod": [
+        "Feb",
+        "Mar",
+        "Jul",
+        "Aug"
+      ],
+      "dist": [
+        "Mar",
+        "Aug"
+      ]
+    },
+    "odd": {
+      "prod": [
+        "Feb",
+        "Mar",
+        "Jul",
+        "Aug"
+      ],
+      "dist": [
+        "Mar",
+        "Aug"
+      ]
+    }
+  },
+  "Handshake Reports": {
+    "even": {
+      "prod": [
+        "Jan",
+        "Feb",
+        "Aug"
+      ],
+      "dist": [
+        "Feb",
+        "Aug"
+      ]
+    },
+    "odd": {
+      "prod": [
+        "Jan",
+        "Feb",
+        "Aug"
+      ],
+      "dist": [
+        "Feb",
+        "Aug"
+      ]
+    }
+  },
+  "K16 Collaborative Grant Reporting": {
+    "even": {
+      "prod": [
+        "Jan",
+        "Jul"
+      ],
+      "dist": [
+        "Jan",
+        "Jul"
+      ]
+    },
+    "odd": {
+      "prod": [
+        "Jan",
+        "Jul"
+      ],
+      "dist": [
+        "Jan",
+        "Jul"
+      ]
+    }
+  },
+  "Perkins Core Indicators Dashboard": {
+    "even": {
+      "prod": [
+        "Apr",
+        "May"
+      ],
+      "dist": [
+        "May"
+      ]
+    },
+    "odd": {
+      "prod": [
+        "Apr",
+        "May"
+      ],
+      "dist": [
+        "May"
+      ]
+    }
+  },
+  "CTE Dashboard": {
+    "even": {
+      "prod": [
+        "Aug",
+        "Sep"
+      ],
+      "dist": [
+        "Sep"
+      ]
+    },
+    "odd": {
+      "prod": [
+        "Aug",
+        "Sep"
+      ],
+      "dist": [
+        "Sep"
+      ]
+    }
+  },
+  "SWP Projections": {
+    "even": {
+      "prod": [
+        "Sep"
+      ],
+      "dist": [
+        "Sep"
+      ]
+    },
+    "odd": {
+      "prod": [
+        "Sep"
+      ],
+      "dist": [
+        "Sep"
+      ]
+    }
+  },
+  "Perkins Headcount Validation Dashboard": {
+    "even": {
+      "prod": [
+        "Nov",
+        "Dec"
+      ],
+      "dist": [
+        "Dec"
+      ]
+    },
+    "odd": {
+      "prod": [
+        "Nov",
+        "Dec"
+      ],
+      "dist": [
+        "Dec"
+      ]
+    }
+  },
+  "JPCM & WBL Regional Reporting": {
+    "even": {
+      "prod": [
+        "Aug"
+      ],
+      "dist": [
+        "Aug"
+      ]
+    },
+    "odd": {
+      "prod": [
+        "Aug"
+      ],
+      "dist": [
+        "Aug"
+      ]
+    }
+  },
+  "Perkins Qualifying Criteria Dashboard": {
+    "even": {
+      "prod": [
+        "Sep"
+      ],
+      "dist": [
+        "Sep"
+      ]
+    },
+    "odd": {
+      "prod": [
+        "Sep"
+      ],
+      "dist": [
+        "Sep"
+      ]
+    }
+  },
+  "Workforce Dashboard": {
+    "even": {
+      "prod": [
+        "Mar",
+        "Apr",
+        "May",
+        "Jun"
+      ],
+      "dist": [
+        "Jun"
+      ]
+    },
+    "odd": {
+      "prod": [],
+      "dist": []
+    }
+  },
+  "Gainful Employment Reporting": {
+    "even": {
+      "prod": [
+        "Jul",
+        "Aug",
+        "Sep"
+      ],
+      "dist": [
+        "Sep"
+      ]
+    },
+    "odd": {
+      "prod": [
+        "Jul",
+        "Aug",
+        "Sep"
+      ],
+      "dist": [
+        "Sep"
+      ]
+    }
+  },
+  "Advisory committee Data Summary": {
+    "even": {
+      "prod": [],
+      "dist": []
+    },
+    "odd": {
+      "prod": [],
+      "dist": []
+    }
+  },
+  "Code Alignment Project": {
+    "even": {
+      "prod": [
+        "Aug",
+        "Sep",
+        "Oct",
+        "Nov",
+        "Dec"
+      ],
+      "dist": []
+    },
+    "odd": {
+      "prod": [
+        "Jan",
+        "Feb",
+        "Mar",
+        "Apr",
+        "May",
+        "Jun",
+        "Jul"
+      ],
+      "dist": [
+        "Jun",
+        "Jul"
+      ]
+    }
+  },
+  "Perkins V Comprehensive Local Needs Assessment": {
+    "even": {
+      "prod": [],
+      "dist": []
+    },
+    "odd": {
+      "prod": [
+        "Aug",
+        "Sep",
+        "Oct",
+        "Nov",
+        "Dec"
+      ],
+      "dist": [
+        "Dec"
+      ]
+    }
+  },
+  "Biennial Review": {
+    "even": {
+      "prod": [],
+      "dist": []
+    },
+    "odd": {
+      "prod": [
+        "Aug",
+        "Sep",
+        "Oct",
+        "Nov",
+        "Dec"
+      ],
+      "dist": [
+        "Dec"
+      ]
+    }
+  },
+  "Lightcast – Skillabi": {
+    "even": {
+      "prod": [],
+      "dist": []
+    },
+    "odd": {
+      "prod": [],
+      "dist": []
+    }
+  },
+  "Lightcast – Career Coach": {
+    "even": {
+      "prod": [],
+      "dist": []
+    },
+    "odd": {
+      "prod": [],
+      "dist": []
+    }
+  }
+}

@@ -1,0 +1,692 @@
+[
+  {
+    "cadence": "Term-Updated",
+    "name": "Work-Based Learning (WBL) Dashboard",
+    "projectLead": "Sunny Xu, qxu@sdccd.edu",
+    "validator": "Marc Grabiel, mgrabiel@sdccd.edu",
+    "projectCategory": "Compliance",
+    "goal": "Visualize student work-based learning (WBL) experiences in both academic and extracurricular settings. Compare outcomes between WBL and non-WBL participants to demonstrate WBL's impact. Track WBL participation trends over time, not all courses are required to have a WBL component; CTE should have a clear rationale when a WBL component is not included.",
+    "deliverables": [
+      "Dashboard(Credit Colleges & SDCCE)",
+      "Data Summary"
+    ],
+    "updateCycle": [
+      "Summer & Fall: Dashboard in Feb – Early March",
+      "End of Year: Dashboard + Data Summary in August"
+    ],
+    "dataSources": [
+      "Campus Solutions",
+      "Internal Datamart"
+    ],
+    "committeeConnections": [
+      "Career Services Committee",
+      "District Student Services Council"
+    ],
+    "collaborators": [
+      "Noah Lacsina, nlacsina@sdccd.edu"
+    ],
+    "distribution": [
+      "Public Access: Static, publicly accessible Data Summary and Dashboard on Career Education Data, Reports, and Resources | San Diego Community College District",
+      "Email & Notifications: Sent by Sunny Xu (qxu@sdccd.edu) to WBL Leads (see CTE Research Contact List.xlsx → WBL tab)"
+    ],
+    "documentation": "To be added",
+    "highlights": [
+      "Sunny Xu (qxu@sdccd.edu) presented at Regional Data & Innovation Committee",
+      "Amertah Perman (aperman@sdccd.edu) and Sunny Xu (qxu@sdccd.edu) presented at 2025 RP Student Success Conference"
+    ],
+    "notes": [
+      "Recommended College Local Customization: Department Level Summary and show courses not coded as WBL but with active enrollment"
+    ],
+    "tags": [
+      "WBL",
+      "Career Services",
+      "Dashboard",
+      "Data Summary"
+    ]
+  },
+  {
+    "cadence": "Term-Updated",
+    "name": "Handshake Reports",
+    "projectLead": "Ben Jewell, bjewell@sdccd.edu",
+    "validator": "Sunny Xu, qxu@sdccd.edu",
+    "projectCategory": "Improvement",
+    "goal": "Provide insights on student and employer engagement across SDCCD via Handshake—including account activations, job applications, job types, and employer activity.",
+    "deliverables": [
+      "Downloadable Public Reports on Handshake(One-time & Upon Request)",
+      "Data Summary"
+    ],
+    "updateCycle": [
+      "Summer & Fall: February",
+      "End of Year: August"
+    ],
+    "dataSources": [
+      "Handshake",
+      "Internal Datamart"
+    ],
+    "committeeConnections": [
+      "Districtwide Career Services Committee",
+      "Districtwide Handshake Implementation Workgroup"
+    ],
+    "collaborators": [
+      "Noah Lacsina, nlacsina@sdccd.edu"
+    ],
+    "distribution": [
+      "Internal Access (Teams): SDCCD sign-in required. SharePoint files published in the Teams channel “Handshake Implementation – Districtwide Workgroup.”",
+      "Email & Notifications: Sent by Ben Jewell (bjewell@sdccd.edu) or Noah Lacsina (nlacsina@sdccd.edu) to Handshake Leads (see CTE Research Contact List.xlsx → Career Services tab)"
+    ],
+    "documentation": "To be added",
+    "notes": [
+      "Downloadable public reports on Handshake will be reviewed during the Career Services Committee meeting on February 11, 2026 and finalized in Spring 2026."
+    ],
+    "tags": [
+      "Handshake",
+      "Career Services",
+      "Data Summary"
+    ]
+  },
+  {
+    "cadence": "Term-Updated",
+    "name": "K16 Collaborative Grant Reporting",
+    "projectLead": "Ben Jewell, bjewell@sdccd.edu",
+    "validator": "CEWD Validation Team (Annie Li/Sunny Xu)",
+    "projectCategory": "Compliance",
+    "goal": "Centralize reporting for the Regional K16 Collaborative Grant: Border Region Talent Pipeline. Focus pathways: Business, Computing, Engineering, Education, Healthcare.",
+    "deliverables": [
+      "Shared Google Sheets"
+    ],
+    "updateCycle": [
+      "Enrollment: Jan 25th",
+      "Awards: July 25th"
+    ],
+    "dataSources": [
+      "Internal Datamart"
+    ],
+    "committeeConnections": [
+      "N/A"
+    ],
+    "collaborators": [
+      "N/A"
+    ],
+    "distribution": [
+      "Submitted on shared Googlesheets and notify Christine Jensen (christine.jensen@gcccd.edu, K-16 Collaborative Director).",
+      "Email & Notifications: Sent by Ben Jewell (bjewell@sdccd.edu) to CTE leads & College IR offices [see CTE Research Contact List.xlsx → IR Offices & CTE tab]"
+    ],
+    "documentation": "To be added",
+    "notes": [
+      "Future Planning: This report may transition to District IR Offices in 2026–2027."
+    ],
+    "tags": [
+      "K16 Collaborative Grant",
+      "Regional Reporting"
+    ]
+  },
+  {
+    "cadence": "Annual-Updated",
+    "name": "Perkins Core Indicators Dashboard",
+    "projectLead": "Sunny Xu, qxu@sdccd.edu",
+    "validator": "N/A",
+    "projectCategory": "Compliance",
+    "goal": "Track key performance metrics under Perkins V through an interactive dashboard disaggregated by gender, race/ethnicity, age, and program area. Supports CTE improvement planning.",
+    "deliverables": [
+      "Dashboard",
+      "Data Summary"
+    ],
+    "updateCycle": [
+      "April – May"
+    ],
+    "dataSources": [
+      "California Community Colleges Chancellor's Office - Perkins V"
+    ],
+    "committeeConnections": [
+      "Perkins Grant Leads and CTE leaderships"
+    ],
+    "collaborators": [
+      "Eddie Matthews, ematthews@sdccd.edu"
+    ],
+    "distribution": [
+      "Public Access: Static, publicly accessible Data Summary and Dashboard on Career Education Data, Reports, and Resources | San Diego Community College District",
+      "Email & Notifications: Sent by Eddie Matthews (ematthews@sdccd.edu) to CTE Leads (see CTE Research Contact List.xlsx → CTE tab)"
+    ],
+    "documentation": "To be added",
+    "highlights": [
+      "Sunny Xu (qxu@sdccd.edu) presented at Regional Data & Innovation Committee",
+      "Sunny Xu (qxu@sdccd.edu) developed a tool that automates data download (available on PerkinsScraper). San Diego COE used the tool to replicate projects for SD & Imperial and LA regional dashboards",
+      "Amertah Perman (aperman@sdccd.edu) and Sunny Xu (qxu@sdccd.edu) presented at 2024 CCCAOE Perkins Pre Conference"
+    ],
+    "tags": [
+      "Perkins",
+      "Dashboard",
+      "Data Summary"
+    ]
+  },
+  {
+    "cadence": "Annual-Updated",
+    "name": "CTE Dashboard",
+    "projectLead": "Sunny Xu, qxu@sdccd.edu",
+    "validator": "Stephen Bass, sbass@sdccd.edu",
+    "projectCategory": "Compliance",
+    "goal": "Provide foundational CTE data on student headcounts, sections, majors, and awards, comparing CTE vs non-CTE metrics and analyzing equity gaps.",
+    "deliverables": [
+      "Dashboard",
+      "Data Summary"
+    ],
+    "updateCycle": [
+      "August - September"
+    ],
+    "dataSources": [
+      "Internal Datamart",
+      "COE Priority Jobs & Programs Report"
+    ],
+    "committeeConnections": [
+      "CTE Leadership"
+    ],
+    "collaborators": [
+      "San Diego Center of Excellence"
+    ],
+    "distribution": [
+      "Public Access: Static, publicly accessible data summaries and SDCCD sign-in–required dashboard on Career Education Data, Reports, and Resources | San Diego Community College District",
+      "Email & Notifications: Sent by Amertah Perman (aperman@sdccd.edu) to CTE Leads and IR Offices (see CTE Research Contact List.xlsx → IR Offices & CTE tab)"
+    ],
+    "documentation": "CTEDashboard_Documentation.html",
+    "tags": [
+      "CTE",
+      "SWP",
+      "Dashboard",
+      "Data Summary"
+    ]
+  },
+  {
+    "cadence": "Annual-Updated",
+    "name": "Perkins Headcount Validation Dashboard",
+    "projectLead": "Sunny Xu, qxu@sdccd.edu",
+    "validator": "Marc Grabiel, mgrabiel@sdccd.edu",
+    "projectCategory": "Compliance",
+    "goal": "Validate unduplicated CTE headcount and economically disadvantaged student counts submitted to the Chancellor's Office. Provide transparency into Section 132 formula distribution and ensure funding accuracy.",
+    "deliverables": [
+      "Dashboard"
+    ],
+    "updateCycle": [
+      "November–December"
+    ],
+    "dataSources": [
+      "Campus Solutions Query"
+    ],
+    "committeeConnections": [
+      "CTE Leads, Perkins Leads"
+    ],
+    "collaborators": [
+      "MIS Team"
+    ],
+    "distribution": [
+      "Email & Notifications: Sent by Sunny Xu (qxu@sdccd.edu) to Amertah Perman (aperman@sdccd.edu) and Eddie Matthews (ematthews@sdccd.edu)",
+      "Not publicly shared but available upon request"
+    ],
+    "documentation": "To be added",
+    "tags": [
+      "Perkins",
+      "Data Governance",
+      "Dashboard"
+    ]
+  },
+  {
+    "cadence": "Annual-Updated",
+    "name": "SWP Projections",
+    "projectLead": "Sunny Xu, qxu@sdccd.edu",
+    "validator": "CEWD Validation Team (Ben Jewell/Annie Li)",
+    "projectCategory": "Compliance",
+    "goal": "Support Strong Workforce Program (SWP) base allocation discussions using CTE FTES and headcounts by college.",
+    "deliverables": [
+      "Excel Spreadsheet"
+    ],
+    "updateCycle": [
+      "September"
+    ],
+    "dataSources": [
+      "CTE Dashboard"
+    ],
+    "committeeConnections": [
+      "CTE Leads"
+    ],
+    "collaborators": [
+      "Edward Matthews (ematthews@sdccd.edu)"
+    ],
+    "distribution": [
+      "Email & Notifications: Sent by Sunny Xu (qxu@sdccd.edu) to Amertah Perman (aperman@sdccd.edu) and Eddie Matthews (ematthews@sdccd.edu)",
+      "Will be used internally for SWP allocation discussions; not publicly shared"
+    ],
+    "documentation": "To be added",
+    "tags": [
+      "SWP",
+      "Data Governance"
+    ]
+  },
+  {
+    "cadence": "Annual-Updated",
+    "name": "JPCM & WBL Regional Reporting",
+    "projectLead": "Ben Jewell, bjewell@sdccd.edu",
+    "validator": "CEWD Validation Team (Sunny Xu/Annie Li)",
+    "projectCategory": "Compliance",
+    "goal": "Report Job Placement Case Manager and WBL Regional Grant data using regional definitions. Align reporting with SDCCD and regional variations.",
+    "deliverables": [
+      "Shared Spreadsheet"
+    ],
+    "updateCycle": [
+      "August 15th"
+    ],
+    "dataSources": [
+      "JPCM Tracking Sheets",
+      "WBL Internal DW Dashboard"
+    ],
+    "committeeConnections": [
+      "Districtwide Career Services Committee",
+      "Districtwide Handshake Implementation Workgroup"
+    ],
+    "collaborators": [
+      "Job Placement Case Managers/Job Deveopers"
+    ],
+    "distribution": [
+      "Submitted to Kevin McMackin, kevin.mcmackin@gcccd.edu San Diego Imperial Counties Regional Consortium",
+      "Email & Notifications: Sent by Ben Jewell (bjewell@sdccd.edu) to CTE leads, Career Services Leads, and College IR offices [see CTE Research Contact List.xlsx → CTE & IR Offices & Career Services tab]"
+    ],
+    "documentation": "To be added",
+    "tags": [
+      "JPCM",
+      "WBL",
+      "Regional Reporting",
+      "Career Services"
+    ]
+  },
+  {
+    "cadence": "Annual-Updated",
+    "name": "Perkins Qualifying Criteria Dashboard",
+    "projectLead": "Sunny Xu, qxu@sdccd.edu",
+    "validator": "CEWD Validation Team (Ben Jewell/Annie Li)",
+    "projectCategory": "Compliance",
+    "goal": "Identify Perkins-eligible programs (high-wage, in-demand, high-skill) per 2024 Chancellor's Office memo.",
+    "deliverables": [
+      "Dashboard"
+    ],
+    "updateCycle": [
+      "September"
+    ],
+    "dataSources": [
+      "Meta/COCI Program Inventory (TOP/CIP/SOC)",
+      "COE Perkins Qualifying Criteria Occupations Dashboard"
+    ],
+    "committeeConnections": [
+      "CTE Leads, Perkins Leads"
+    ],
+    "collaborators": [
+      "San Diego Center of Excellence",
+      "Eddie Matthews(ematthews@sdccd.edu)"
+    ],
+    "distribution": [
+      "Public Access: Static, publicly accessible Dashboard on Career Education Data, Reports, and Resources | San Diego Community College District",
+      "Email & Notifications: Sent by Eddie Matthew (ematthews@sdccd.edu) to Perkins Leads (see CTE Research Contact List.xlsx → Perkins tab)"
+    ],
+    "documentation": "To be added",
+    "tags": [
+      "Perkins",
+      "Dashboard"
+    ]
+  },
+  {
+    "cadence": "Annual-Updated",
+    "name": "Workforce Dashboard",
+    "projectLead": "Sunny Xu, qxu@sdccd.edu",
+    "validator": "Stephen Bass, sbass@sdccd.edu",
+    "projectCategory": "Improvement",
+    "goal": "To show how our colleges contribute to workforce development and economic mobility by aligning training programs with regional employer needs, tracking wage outcomes, and identifying skill gaps and unmet demand in priority job areas.",
+    "deliverables": [
+      "Dashboard",
+      "Data Summary"
+    ],
+    "updateCycle": [
+      "TBD?"
+    ],
+    "dataSources": [
+      "CTEOS",
+      "DataVista",
+      "EDD",
+      "Skillabi"
+    ],
+    "committeeConnections": [
+      "CTE Leads"
+    ],
+    "collaborators": [
+      "Employment Development Department (EDD)",
+      "San Diego Center of Excellence",
+      "Lightcast"
+    ],
+    "distribution": [
+      "CTE Leads",
+      "Career Education Data, Reports, and Resources | San Diego Community College District?"
+    ],
+    "documentation": "To be added",
+    "tags": [
+      "SWP",
+      "Dashboard",
+      "Data Summary"
+    ]
+  },
+  {
+    "cadence": "Annual-Updated",
+    "name": "Gainful Employment Reporting",
+    "projectLead": "Sunny Xu, qxu@sdccd.edu",
+    "validator": "Victor DeVore, vdevore@sdccd.edu",
+    "projectCategory": "Compliance",
+    "goal": "To fulfill reporting requirements under Financial Value Transparency (FVT) and Gainful Employment (GE) regulations, including enrollment, costs, and aid data submission for applicable programs.",
+    "deliverables": [
+      "3 Reports for each college"
+    ],
+    "updateCycle": [
+      "October 1"
+    ],
+    "dataSources": [
+      "Campus Solutions",
+      "National Student Clearinghouse"
+    ],
+    "committeeConnections": [
+      "N/A"
+    ],
+    "collaborators": [
+      "Shelly Hess (shess@sdccd.edu, Instructional Services)",
+      "Victor DeVore (vdevore@sdccd.edu, Student Services)"
+    ],
+    "distribution": [
+      "Submitted on National Student Clearinghouse"
+    ],
+    "documentation": "To be added",
+    "tags": [
+      "GE/FVT",
+      "Federal Reporting"
+    ]
+  },
+  {
+    "cadence": "Annual-Updated",
+    "name": "Advisory committee Data Summary",
+    "projectLead": "Ben Jewell, bjewell@sdccd.edu",
+    "validator": "Sunny Xu, qxu@sdccd.edu",
+    "projectCategory": "Compliance",
+    "goal": "Provide consistent data sources for advisory committee to better understand program specific student information and labor market information.",
+    "deliverables": [
+      "Data Summaries per program area per college"
+    ],
+    "updateCycle": [
+      "Every XX?"
+    ],
+    "dataSources": [
+      "CTE Dashboard",
+      "Biennial Review Dashboard",
+      "COE Reports",
+      "Skillabi(Lightcast)"
+    ],
+    "committeeConnections": [
+      "Advisory committee"
+    ],
+    "collaborators": [
+      "TBD"
+    ],
+    "distribution": [
+      "Public Access: Static, publicly accessible Dashboard on Career Education Data, Reports, and Resources | San Diego Community College District?",
+      "Email & Notifications: Sent by Eddie Matthew (ematthews@sdccd.edu) to Advisory Committees (TBD)"
+    ],
+    "documentation": "To be added",
+    "tags": [
+      "Advisory Committees",
+      "Data Summary"
+    ]
+  },
+  {
+    "cadence": "Biennial",
+    "name": "Perkins V Comprehensive Local Needs Assessment",
+    "projectLead": "Sunny Xu, qxu@sdccd.edu",
+    "validator": "CEWD Validation Team",
+    "projectCategory": "Compliance",
+    "goal": "Support colleges completing the Perkins V CLNA by gathering and analyzing required data to evaluate CTE effectiveness and inform planning, funding, and accountability.",
+    "deliverables": [
+      "Districtwide Reports: Elements 1, 2, 3, 5, 6 (Point Person: Sunny Xu, qxu@sdccd.edu)",
+      "College Reports: Elements 1, 2, 3, 5 (Point Person: Ben Jewell, bjewell@sdccd.edu)",
+      "CLNA Web Report (Point Person: Sunny Xu, qxu@sdccd.edu)"
+    ],
+    "updateCycle": [
+      "Prep Summer Odd Year (e.g. 2027)",
+      "Provide Deliverables in Fall Odd Year (e.g. 2027)"
+    ],
+    "dataSources": [
+      "CTE Dashboard",
+      "Perkins Core Indicators Dashboard",
+      "COE Reports",
+      "Skillabi(Lightcast)"
+    ],
+    "committeeConnections": [
+      "CTE Leads, Perkins Leads"
+    ],
+    "collaborators": [
+      "Eddie Matthews(ematthews@sdccd.edu)"
+    ],
+    "distribution": [
+      "Public Access: Static, publicly accessible web report and SDCCD sign-in–required SharePoint data summary, attached to the web report and posted on the Perkins Canvas page",
+      "Email & Notifications: Sent by Eddie Matthews (ematthews@sdccd.edu) to Perkins Leads (see CTE Research Contact List.xlsx → Perkins tab)"
+    ],
+    "documentation": "To be added",
+    "tags": [
+      "CLNA",
+      "Perkins",
+      "Data Summary"
+    ]
+  },
+  {
+    "cadence": "Biennial",
+    "name": "Biennial Review",
+    "projectLead": "Sunny Xu, qxu@sdccd.edu",
+    "validator": "CEWD Validation Team",
+    "projectCategory": "Compliance",
+    "goal": "Support colleges meeting Education Code 78016 by providing LMI and program completion data to evaluate CTE programs.",
+    "deliverables": [
+      "Dashboard",
+      "Spreadsheets"
+    ],
+    "updateCycle": [
+      "Summer Odd Year(e.g. 2027) provide codes to COE",
+      "Fall Odd Year (e.g. 2027) Use the code for Biennial Review",
+      "Submit to CIC in November Odd Year (e.g. 2027)"
+    ],
+    "dataSources": [
+      "COE Program Fact Sheets Dashboard",
+      "Program Inventory from Shelly Hess,Instructional Services shess@sdccd.edu)",
+      "Internal Datamart"
+    ],
+    "committeeConnections": [
+      "CIC, Shelly, CTE leads"
+    ],
+    "collaborators": [
+      "Shelly Hess, Instructional Services shess@sdccd.edu",
+      "San Diego COE"
+    ],
+    "distribution": [
+      "Sent by Amertah Perman, aperman@sdccd.edu to CIC and CTE Leads"
+    ],
+    "documentation": "To be added",
+    "tags": [
+      "Biennial Review",
+      "Dashboard"
+    ]
+  },
+  {
+    "cadence": "Biennial",
+    "name": "Code Alignment Project",
+    "projectLead": "Sunny Xu, qxu@sdccd.edu",
+    "validator": "Sunny Xu, qxu@sdccd.edu",
+    "projectCategory": "Compliance",
+    "goal": "Ensure CTE programs have updated and aligned TOP-CIP-SOC Codes",
+    "deliverables": [
+      "Spreadsheet"
+    ],
+    "updateCycle": [
+      "Summer Even Year (e.g. 2026) start project planning",
+      "Fall Even Year (e.g. 2026) start auditing codes",
+      "Spring Odd Year (e.g. 2027) Faculty Engagement",
+      "Summer Odd Year (e.g. 2027) provide codes to COE",
+      "Fall Odd Year (e.g. 2027) Use the code for CLNA & Biennial Review",
+      "Spring Even Year (e.g. 2028) Submit CLNA & Biennial Review"
+    ],
+    "dataSources": [
+      "Program Inventory from Shelly Hess,Instructional Services (shess@sdccd.edu)",
+      "COE TOP-CIP-SOC Crosswalk"
+    ],
+    "committeeConnections": [
+      "CIC",
+      "CTE Leads"
+    ],
+    "collaborators": [
+      "Shelly Hess,Instructional Services (shess@sdccd.edu)",
+      "San Diego COE"
+    ],
+    "distribution": [
+      "Codes will be reviewed by the corresponding college representatives and faculty",
+      "The crosswalk will be submitted to the San Diego Center of Excellence for Program Fact Sheets updates and to Instructional Services to ensure the changes are reflected in COCI, META, and Colleague (CS)"
+    ],
+    "documentation": "To be added",
+    "tags": [
+      "TOP-CIP-SOC",
+      "Code Alignment",
+      "Data Governance"
+    ]
+  },
+  {
+    "cadence": "Biennial",
+    "name": "Lightcast – Skillabi",
+    "projectLead": "Sunny Xu, qxu@sdccd.edu",
+    "validator": "N/A",
+    "projectCategory": "Improvement",
+    "goal": "Provide program and course information for Lightcast to evaluate whether programs and courses are training for skills needed in the industry.",
+    "deliverables": [
+      "Spreadsheets"
+    ],
+    "updateCycle": [
+      "Every other August (Even Year) (e.g., 2026, 2028)"
+    ],
+    "dataSources": [
+      "CurricUNET Meta"
+    ],
+    "committeeConnections": [
+      "Districtwide Career Services Committee",
+      "Districtwide Handshake Implementation Workgroup"
+    ],
+    "collaborators": [
+      "Lightcast"
+    ],
+    "distribution": [
+      "Sent by Sunny Xu (qxu@sdccd.edu) to Lightcast"
+    ],
+    "documentation": "To be added",
+    "tags": [
+      "Lightcast",
+      "Skillabi",
+      "Career Services",
+      "Data Governance"
+    ]
+  },
+  {
+    "cadence": "Biennial",
+    "name": "Lightcast – Career Coach",
+    "projectLead": "Sunny Xu, qxu@sdccd.edu",
+    "validator": "N/A",
+    "projectCategory": "Improvement",
+    "goal": "Audit active program list and SOC codes provided by Lightcast.",
+    "deliverables": [
+      "ReviewWorkbook"
+    ],
+    "updateCycle": [
+      "Every August (Even Year) (e.g., 2026, 2028)"
+    ],
+    "dataSources": [
+      "Program Inventory with TOP/CIP/SOC Codes"
+    ],
+    "committeeConnections": [
+      "Districtwide Career Services Committee",
+      "Districtwide Handshake Implementation Workgroup"
+    ],
+    "collaborators": [
+      "Lightcast"
+    ],
+    "distribution": [
+      "Sent by Sunny Xu (qxu@sdccd.edu) to Lightcast"
+    ],
+    "documentation": "To be added",
+    "tags": [
+      "Lightcast",
+      "Career Coach",
+      "Career Services",
+      "Data Governance"
+    ]
+  },
+  {
+    "cadence": "Ad-Hoc",
+    "name": "EDD Data Project (2025 Projects)",
+    "projectLead": "Sunny Xu, qxu@sdccd.edu",
+    "validator": "Stephen Bass, sbass@sdccd.edu",
+    "projectCategory": "Improvement",
+    "goal": "Provide student level data for EDD to retrieve aggregated student Post completion Employment Data for SDCCD. This data will be used in Workforce Dashboard and other CTE reports.",
+    "deliverables": [
+      "Spreadsheet"
+    ],
+    "updateCycle": [
+      "N/A"
+    ],
+    "dataSources": [
+      "Internal Datamart"
+    ],
+    "committeeConnections": [
+      "N/A"
+    ],
+    "collaborators": [
+      "N/A"
+    ],
+    "distribution": [
+      "N/A"
+    ],
+    "documentation": "To be added",
+    "tags": [
+      "EDD",
+      "SWP"
+    ]
+  },
+  {
+    "cadence": "Ad-Hoc",
+    "name": "WBL Chatbot (2025 Projects)",
+    "projectLead": "Sunny Xu, qxu@sdccd.edu",
+    "validator": "N/A",
+    "projectCategory": "Improvement",
+    "goal": "Help people get started with WBL",
+    "deliverables": [
+      "Custom GPT"
+    ],
+    "updateCycle": [
+      "N/A"
+    ],
+    "dataSources": [
+      "WBL Documentation"
+    ],
+    "committeeConnections": [
+      "N/A"
+    ],
+    "collaborators": [
+      "N/A"
+    ],
+    "distribution": [
+      "N/A"
+    ],
+    "documentation": "To be added",
+    "tags": [
+      "WBL",
+      "AI"
+    ],
+    "calendarHints": {
+      "2026": [
+        "Feb"
+      ]
+    }
+  }
+]

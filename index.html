@@ -25,6 +25,12 @@
       --dist-bg: rgba(245,158,11,.24);
       --dist-fg: #92400e;
       --dist-border: rgba(245,158,11,.60);
+
+      /* schedule polish */
+      --glass: rgba(255,255,255,0.80);
+      --glass-border: rgba(15,23,42,0.10);
+      --shadow-lg: 0 18px 35px rgba(2, 6, 23, 0.10);
+      --shadow-md: 0 10px 20px rgba(2, 6, 23, 0.08);
     }
 
     * { box-sizing: border-box; }
@@ -34,6 +40,8 @@
       color: var(--text);
       background-color: var(--bg);
       line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
 
     .app { display: grid; grid-template-columns: 320px 1fr; min-height: 100vh; }
@@ -176,8 +184,15 @@
     .btn.primary { background: var(--brand); color: #fff; border-color: var(--brand); }
     .btn.primary:hover { filter: brightness(0.97); }
 
-    .panel { background: #fff; border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); margin-bottom: 32px; overflow: hidden; }
-    .panel-header { padding: 24px; border-bottom: 1px solid var(--border); }
+    .panel {
+      background: #fff;
+      border: 1px solid rgba(15,23,42,0.08);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-lg);
+      margin-bottom: 32px;
+      overflow: hidden;
+    }
+    .panel-header { padding: 24px; border-bottom: 1px solid var(--border); background: linear-gradient(135deg, rgba(49,169,224,.10), rgba(99,102,241,.06)); }
     .panel-header h2 { margin: 0; font-size: 20px; font-weight: 900; }
     .panel-header p { margin: 8px 0 0 0; color: var(--muted); font-size: 14px; }
     .panel-body { padding: 24px; }
@@ -226,41 +241,64 @@
       display:flex; align-items:flex-start; justify-content: space-between;
       gap: 12px; flex-wrap: wrap; margin-top: 14px;
     }
-    .schedule-toolbar {
-      margin-top: 14px;
-      display:flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      align-items: center;
-      padding: 14px;
-      border-radius: 14px;
-      border: 1px solid var(--border);
-      background: linear-gradient(to bottom right, #fff, var(--bg));
+
+    /* NEW: aligned toolbar (2 fields + stacked actions) */
+    .schedule-toolbar{
+      margin-top: 16px;
+      padding: 16px;
+      border-radius: 16px;
+      border: 1px solid var(--glass-border);
+      background: var(--glass);
+      box-shadow: var(--shadow-md);
+      display: grid;
+      grid-template-columns: minmax(240px, 1.1fr) minmax(260px, 1.3fr) 160px;
+      gap: 14px;
+      align-items: end;
     }
+    @media (max-width: 980px){
+      .schedule-toolbar{
+        grid-template-columns: 1fr;
+      }
+    }
+
     .schedule-toolbar .field{
       display:flex;
       flex-direction: column;
-      gap: 6px;
-      min-width: 220px;
+      gap: 8px;
     }
     .schedule-toolbar label{
       font-size: 12px;
       font-weight: 950;
       color: var(--muted);
+      letter-spacing: 0.02em;
     }
     .schedule-toolbar input, .schedule-toolbar select{
-      height: 42px;
-      padding: 10px 12px;
-      border: 1px solid var(--border);
-      border-radius: 12px;
+      height: 46px;
+      padding: 12px 12px;
+      border: 1px solid rgba(15,23,42,0.12);
+      border-radius: 14px;
       font-size: 14px;
       outline: none;
       background: #fff;
-      font-weight: 800;
+      font-weight: 900;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.6);
     }
     .schedule-toolbar input:focus, .schedule-toolbar select:focus { border-color: var(--brand); }
 
-    .hint { font-size: 12px; color: var(--muted); font-weight: 700; }
+    .hint { font-size: 12px; color: var(--muted); font-weight: 800; margin-top: 2px; }
+
+    .schedule-actions{
+      display:flex;
+      flex-direction: column;
+      gap: 10px;
+      align-items: stretch;
+    }
+    .schedule-actions .btn{
+      height: 46px;
+      border-radius: 14px;
+      font-size: 13px;
+      font-weight: 950;
+    }
 
     .schedule-legend { display:flex; gap: 12px; flex-wrap:wrap; margin: 0; }
     .schedule-key { display:flex; align-items:center; gap: 8px; font-size: 12px; font-weight: 900; color: #334155; }
@@ -285,8 +323,16 @@
     .schedule-scroll { overflow-x:auto; border: 1px solid var(--border); border-radius: 14px; background: #fff; }
     .schedule-table { border-collapse: separate; border-spacing: 0; width: 100%; min-width: 1020px; }
     .schedule-table th, .schedule-table td { padding: 10px 10px; border-bottom: 1px solid var(--border); font-size: 12px; }
-    .schedule-table th { text-align:left; position: sticky; top: 0; background:#fff; z-index: 2; font-weight: 950; }
-    .schedule-sticky { position: sticky; left: 0; background:#fff; z-index: 3; }
+    .schedule-table th {
+      text-align:left;
+      position: sticky;
+      top: 0;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(6px);
+      z-index: 2;
+      font-weight: 950;
+    }
+    .schedule-sticky { position: sticky; left: 0; background: rgba(255,255,255,0.95); backdrop-filter: blur(6px); z-index: 3; }
     .schedule-cell { width: 56px; text-align:center; border-left: 1px solid var(--border); font-weight: 950; }
 
     .schedule-prod {
@@ -515,29 +561,24 @@
             </div>
           </div>
 
-          <!-- NEW: one-row toolbar (search + multi project filter + year mode + export) -->
+          <!-- UPDATED: ONLY TWO BOXES (Year mode + Search). Actions stacked on the right. -->
           <div class="schedule-toolbar">
-            <div class="field" style="min-width:260px; flex: 1 1 260px;">
-              <label>Search projects in schedule</label>
-              <input id="schedSearch" type="text" placeholder="Type to filter schedule…">
-            </div>
-
-            <div class="field" style="min-width:320px; flex: 2 1 320px;">
-              <label>Filter projects (multi-select)</label>
-              <select id="schedProjects" multiple aria-label="Filter projects (multi-select)" title="Tip: Cmd/Ctrl-click for multi-select">
-              </select>
-              <div class="hint">Tip: Cmd/Ctrl-click to select multiple. Clear selection to view all.</div>
-            </div>
-
-            <div class="field" style="min-width:220px;">
+            <div class="field">
               <label>Year mode</label>
               <select id="yearModeSchedule" aria-label="Schedule year mode">
                 <option value="even" selected>Even Year (e.g., 2026)</option>
                 <option value="odd">Odd Year (e.g., 2027)</option>
               </select>
+              <div class="hint">This updates schedule + calendar.</div>
             </div>
 
-            <div style="display:flex; gap:10px; align-items:flex-end;">
+            <div class="field">
+              <label>Search in schedule</label>
+              <input id="schedSearch" type="text" placeholder="Type to filter schedule…">
+              <div class="hint">Matches project name, lead, or category.</div>
+            </div>
+
+            <div class="schedule-actions" aria-label="Schedule actions">
               <button class="btn" type="button" id="schedClear">Clear</button>
               <button class="btn primary" type="button" id="exportScheduleCsv">Export CSV</button>
             </div>
@@ -557,7 +598,7 @@
         <div class="panel-body" id="calendarWrap"></div>
       </section>
 
-      <!-- Practices (kept simple; can be moved to JSON later) -->
+      <!-- Practices -->
       <section id="practices" class="panel">
         <div class="panel-header">
           <h2>Standard Practices</h2>
@@ -593,10 +634,6 @@
  *  - /data/projects.json
  *  - /data/schedule.json
  *  - /data/events.json
- *
- * Recommended workflow:
- *  1) Edit JSON files (most teammates can do this safely).
- *  2) Commit changes → GitHub Pages updates the website.
  */
 
 let PROJECTS = [];
@@ -718,7 +755,6 @@ const scheduleYearPillEl = document.getElementById("scheduleYearPill");
 const scheduleWrap = document.getElementById("scheduleWrap");
 
 const schedSearchEl = document.getElementById("schedSearch");
-const schedProjectsEl = document.getElementById("schedProjects");
 const schedClearBtn = document.getElementById("schedClear");
 const exportScheduleBtn = document.getElementById("exportScheduleCsv");
 
@@ -840,20 +876,15 @@ function renderProjects(filtered){
   bindOpenHandlers(grid);
 }
 
-function getSelectedScheduleProjectNames(){
-  // If nothing selected -> treat as "All"
-  const selected = [...schedProjectsEl.options].filter(o => o.selected).map(o => o.value);
-  return selected;
-}
-
 function applyScheduleFilters(projectsForSchedule){
   const q = (schedSearchEl.value || "").trim().toLowerCase();
-  const selectedNames = getSelectedScheduleProjectNames();
 
   return projectsForSchedule.filter(p => {
-    const matchesSearch = !q || (p.name || "").toLowerCase().includes(q) || (p.projectLead || "").toLowerCase().includes(q) || (p.projectCategory || "").toLowerCase().includes(q);
-    const matchesSelected = (selectedNames.length === 0) || selectedNames.includes(p.name);
-    return matchesSearch && matchesSelected;
+    if (!q) return true;
+    const name = (p.name || "").toLowerCase();
+    const lead = (p.projectLead || "").toLowerCase();
+    const cat  = (p.projectCategory || "").toLowerCase();
+    return name.includes(q) || lead.includes(q) || cat.includes(q);
   });
 }
 
@@ -938,7 +969,7 @@ function exportScheduleCSV(baseProjects){
       p.projectCategory || "",
       ...MONTHS.map(m => scheduleLabel(prodSet.has(m), distSet.has(m)))
     ];
-    // CSV escaping
+
     lines.push(row.map(v => {
       const s = String(v ?? "");
       if (s.includes('"') || s.includes(",") || s.includes("\n")) return `"${s.replaceAll('"','""')}"`;
@@ -1096,7 +1127,7 @@ function renderAll(){
   const filtered = getFilteredProjects();
   renderProjects(filtered);
 
-  // Schedule uses non ad-hoc projects only (per your rule)
+  // Schedule uses non ad-hoc projects only
   const scheduleBase = PROJECTS.filter(p => p.cadence !== "Ad-Hoc");
   renderSchedule(scheduleBase);
 
@@ -1116,28 +1147,14 @@ function populateLeads(){
   });
 }
 
-function populateScheduleProjectMultiSelect(){
-  // only non ad-hoc for schedule
-  const scheduleProjects = PROJECTS.filter(p => p.cadence !== "Ad-Hoc").map(p => p.name).sort();
-  schedProjectsEl.innerHTML = "";
-  scheduleProjects.forEach(name => {
-    const opt = document.createElement("option");
-    opt.value = name;
-    opt.textContent = name;
-    schedProjectsEl.appendChild(opt);
-  });
-}
-
 function buildCalendarTabs(){
-  // make tabs from years seen in events or just default set
   const years = new Set(["2025","2026","2027"]);
   Object.keys(CALENDAR_EVENTS || {}).forEach(y => years.add(String(y)));
-  // also include years implied by schedule: just include 2026 and 2027 at minimum
   years.add("2026"); years.add("2027");
 
   const ordered = [...years].sort();
   const tabWrap = document.getElementById("calendarTabs");
-  tabWrap.innerHTML = ordered.map((y, idx) => {
+  tabWrap.innerHTML = ordered.map((y) => {
     const active = (y === "2026") ? "active" : "";
     return `<button class="tab-btn ${active}" data-year="${escapeHtml(y)}">${escapeHtml(y)}</button>`;
   }).join("");
@@ -1153,8 +1170,8 @@ function buildCalendarTabs(){
 
 function wireEvents(){
   [qEl, cadenceEl, categoryEl, leadEl].forEach(el => el.addEventListener("input", renderAll));
+
   yearModeScheduleEl.addEventListener("change", () => {
-    // schedule + calendar are year-sensitive
     const scheduleBase = PROJECTS.filter(p => p.cadence !== "Ad-Hoc");
     renderSchedule(scheduleBase);
     const activeBtn = document.querySelector(".tab-btn.active");
@@ -1165,14 +1182,9 @@ function wireEvents(){
     const scheduleBase = PROJECTS.filter(p => p.cadence !== "Ad-Hoc");
     renderSchedule(scheduleBase);
   });
-  schedProjectsEl.addEventListener("change", () => {
-    const scheduleBase = PROJECTS.filter(p => p.cadence !== "Ad-Hoc");
-    renderSchedule(scheduleBase);
-  });
 
   schedClearBtn.addEventListener("click", () => {
     schedSearchEl.value = "";
-    [...schedProjectsEl.options].forEach(o => o.selected = false);
     const scheduleBase = PROJECTS.filter(p => p.cadence !== "Ad-Hoc");
     renderSchedule(scheduleBase);
   });
@@ -1190,7 +1202,6 @@ function wireEvents(){
     renderAll();
   });
 
-  // nav active state
   window.addEventListener("hashchange", () => {
     const h = location.hash || "#overview";
     document.querySelectorAll(".nav a").forEach(a => a.classList.toggle("active", a.getAttribute("href") === h));
@@ -1221,10 +1232,9 @@ async function init(){
     PROJECT_INDEX = new Map(PROJECTS.map(p => [slugify(p.name), p]));
 
     populateLeads();
-    populateScheduleProjectMultiSelect();
     buildCalendarTabs();
 
-    // Practices (kept inline; can be moved to JSON later)
+    // Practices (still inline; can be moved to JSON later)
     const PRACTICES = [
       { title: "Dashboard Development", items: ["Documentation Template","Data Validation Guidelines"] },
       { title: "External Data Reporting", items: ["Documentation Template","Data Validation Guidelines"] },
@@ -1244,7 +1254,6 @@ async function init(){
   } catch (err){
     console.error(err);
     document.getElementById("loadBanner").style.display = "block";
-    // still render practices and header so the page isn't blank
     document.getElementById("lastUpdated").textContent = new Date().toLocaleDateString();
   }
 }
